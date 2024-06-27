@@ -13,7 +13,7 @@ const HeroSection = () => {
     target: targetRef,
   });
 
-  const dimension = useTransform(scrollYProgress, [0, 0.8], [1.95, 1]);
+  const dimension = useTransform(scrollYProgress, [0, 0.8], [1.8, 1]);
   const scale = useTransform(scrollYProgress, [0, 0.8], [200, 0]);
   const videoPosterOpacity = useTransform(scrollYProgress, [0.5, 0.8], [0, 1]);
 
@@ -31,13 +31,13 @@ const HeroSection = () => {
       ref={targetRef}
     >
       <motion.div
-        className="sticky top-28 h-[100dvh]"
+        className="sticky top-36 h-[100dvh] pt-12"
         animate={{ transition: { type: "tween" } }}
         style={{ transform }}
       >
         <div className="space-y-0">
           <div>
-            <div className="relative mx-auto h-[610px] w-3/5  overflow-hidden border-4 border-b-gray-900">
+            <div className="relative mx-auto h-[610px] w-3/5  overflow-hidden border-4 border-b-gray-900 ">
               <video
                 className="object-cover w-full h-full transition duration-500 "
                 muted
@@ -56,18 +56,18 @@ const HeroSection = () => {
 
             <motion.img
               src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_tv_shadow_color__h0jua2c6nwi2_large.png"
-              className="mx-auto"
+              className="mx-auto "
               style={{ opacity: videoPosterOpacity }}
             />
           </div>
 
           <img
             src="https://www.apple.com/v/apple-tv-4k/ai/images/overview/hero/hero_tv_remote__da02803g5doy_large.png"
-            className="relative z-50 object-contain mx-auto aspect-auto h-36 "
+            className="relative z-50 object-contain h-32 mx-auto -translate-y-20 aspect-auto"
           />
 
-          {/* <motion.div
-            className="w-3/5 mx-auto mb-12 font-semibold text-center text-gray-400 debug-border"
+          <motion.div
+            className="w-3/5 mx-auto font-semibold text-center text-gray-400 -translate-y-14 "
             style={{
               opacity: textVisibility,
               transition: { duration: 1 },
@@ -86,7 +86,7 @@ const HeroSection = () => {
               <br />
               <span className="">Starting at $129</span>
             </p>
-          </motion.div> */}
+          </motion.div>
         </div>
       </motion.div>
     </section>
