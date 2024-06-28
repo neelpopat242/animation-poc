@@ -24,9 +24,7 @@ export default function ScrollContainer() {
     target: targetRef,
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (value) => {});
-
-  const scrollValue = useTransform(scrollYProgress, [0, 1], [0, 800]);
+  const scrollValue = useTransform(scrollYProgress, [0, 1], [100, 800]);
 
   const CONFIG = [
     {
@@ -42,47 +40,47 @@ export default function ScrollContainer() {
       index: 2,
       styles: "bg-white",
       mediaUrl:
-        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg",
-      mediaType: "image",
+        "https://www.apple.com/105/media/us/apple-tv-4k/2023/a128dbc4-3800-4bf9-9ccc-5a6c86669715/anim/tv+-sizzle/large.mp4",
+      mediaType: "video",
     },
     {
       component: InSight,
       index: 3,
       styles: "bg-white",
       mediaUrl:
-        "https://www.apple.com/105/media/us/apple-tv-4k/2024/3244f166-f48e-467a-b2b2-79e9d1a919f8/anim/screen-tv-app/large.mp4",
-      mediaType: "video",
+        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/rooms/screen_insight__gltkr8q637iq_large.jpg",
+      mediaType: "image",
     },
     {
       component: AppleFitness,
       index: 4,
       styles: "bg-[#00bb53]",
       mediaUrl:
-        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg",
-      mediaType: "image",
+        "https://www.apple.com/105/media/us/apple-tv-4k/2023/a128dbc4-3800-4bf9-9ccc-5a6c86669715/anim/fitness/large.mp4",
+      mediaType: "video",
     },
     {
       component: AppleMusic,
       index: 5,
       styles: "bg-[#796bf2]",
       mediaUrl:
-        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg",
-      mediaType: "image",
+        "https://www.apple.com/105/media/us/apple-tv-4k/2023/a128dbc4-3800-4bf9-9ccc-5a6c86669715/anim/music/large.mp4",
+      mediaType: "video",
     },
     {
       component: AppleArcade,
       index: 6,
       styles: "bg-red-400",
       mediaUrl:
-        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg",
-      mediaType: "image",
+        "https://www.apple.com/105/media/us/apple-tv-4k/2022/90c4e81a-c161-4f7f-9ea3-137ffd1054f5/anim/arcade/large.mp4",
+      mediaType: "video",
     },
     {
       component: ApplePhotos,
       index: 7,
       styles: "bg-[#f5f5f7]",
       mediaUrl:
-        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg",
+        "https://www.apple.com/v/apple-tv-4k/aj/images/overview/rooms/screen_photos__e7t2xddk2dei_large_2x.jpg",
       mediaType: "image",
     },
     {
@@ -90,16 +88,16 @@ export default function ScrollContainer() {
       index: 8,
       styles: "bg-white",
       mediaUrl:
-        "https://www.apple.com/105/media/us/apple-tv-4k/2024/3244f166-f48e-467a-b2b2-79e9d1a919f8/anim/screen-tv-app/large.mp4",
+        "https://www.apple.com/105/media/us/apple-tv-4k/2024/899d3820-155e-49db-833e-cd0ca513ab8a/anim/screensavers/large.mp4",
       mediaType: "video",
     },
   ];
 
   return (
     <div className="w-full h-[800vh] relative " ref={targetRef}>
-      <div className="h-[510px] border-5 border-black  sticky top-[25vh]  z-10 flex items-center justify-center  w-[45%] left-[55%]  aspect-video ">
+      <div className="h-[6.25%] border-5 border-black  sticky top-[25vh] mt-[15vh] z-10 flex items-center justify-center  w-[45%] left-[55%]   ">
         <div className="relative w-full h-full">
-          {/* {CONFIG.map((config, index) => (
+          {CONFIG.map((config, index) => (
             <MediaComponent
               key={index}
               index={index}
@@ -108,7 +106,7 @@ export default function ScrollContainer() {
               mediaUrl={config.mediaUrl}
               mediaType={config.mediaType}
             />
-          ))} */}
+          ))}
         </div>
       </div>
 
@@ -127,33 +125,44 @@ const HEIGHT = 100;
 const MediaComponent = ({ mediaUrl, mediaType, scrollValue, index }) => {
   const translateY = useTransform(
     scrollValue,
-    [index * HEIGHT, (index + 1) * HEIGHT],
+    [25 + index * HEIGHT, 75 + index * HEIGHT],
     [0, 1]
   );
 
-  const scaleY = useTransform(translateY, [0, 1], [50, 1]);
-
   const transform = useMotionTemplate`matrix(1,0,0,${translateY}, 0 , 0)`;
 
-  const transformScaleY = useMotionTemplate`scaleY(${scaleY})`;
-
+  const stylesToUse = () => {
+    if ([1, 2].includes(index)) {
+      return {
+        opacity: translateY,
+      };
+    } else {
+      return {
+        transform,
+      };
+    }
+  };
   if (mediaType === "image") {
     return (
-      <div className="absolute inset-0 debug-border" style={{ transform }}>
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center w-full h-[500px] origin-bottom  aspect-video rounded-lg"
+        style={{ ...stylesToUse() }}
+      >
         <motion.img
-          style={{ transform: transformScaleY }}
           src={mediaUrl}
           alt="media"
-          className="object-contain w-full h-full rounded-lg "
+          className="  h-[500px] rounded-lg"
         />
-      </div>
+      </motion.div>
     );
   }
   return (
-    <div className="absolute inset-0 debug-border" style={{ transform }}>
+    <motion.div
+      className="absolute inset-0 origin-bottom  aspect-video h-[500px] rounded-lg"
+      style={{ ...stylesToUse() }}
+    >
       <motion.video
-        style={{ transform: transformScaleY }}
-        className="object-contain w-full h-full "
+        className="rounded-lg h-[500px] origin-bottom "
         muted
         loop
         autoPlay
@@ -161,6 +170,6 @@ const MediaComponent = ({ mediaUrl, mediaType, scrollValue, index }) => {
       >
         <source src={mediaUrl} type="video/mp4" />
       </motion.video>
-    </div>
+    </motion.div>
   );
 };

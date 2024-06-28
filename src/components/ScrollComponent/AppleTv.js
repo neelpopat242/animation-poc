@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AppleTv() {
   return (
-    <div className="flex flex-col items-center justify-center pt-16">
+    <div className="flex flex-col items-center justify-center ">
       <div className=" w-80">
         <img
           src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/entertainment/apple_tv_app__d6nd1841aiie_large_2x.png"
