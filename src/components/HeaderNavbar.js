@@ -53,7 +53,7 @@ export default function HeaderNavbar() {
       <div className="flex items-center justify-between max-w-[1024px]  h-full w-full px-4 ">
         <AppleLogo />
 
-        <div className="flex items-center justify-center gap-8 ">
+        <div className="items-center justify-center hidden gap-8 md:flex">
           {NAVBAR_LIST_ITEMS.map((item) => (
             <Link
               href={item.redirectLink}
@@ -66,9 +66,11 @@ export default function HeaderNavbar() {
           ))}
         </div>
 
-        <SearchLogo />
+        <div className="flex items-center justify-center gap-8">
+          <SearchLogo />
 
-        <CartLogo />
+          <CartLogo />
+        </div>
       </div>
     </div>
   );
