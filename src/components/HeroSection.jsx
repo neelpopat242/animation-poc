@@ -6,7 +6,59 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-const HeroSection = () => {
+export const HeroSection = () => {
+  return (
+    <>
+      <HeroSectionDesktop />
+      <HeroSectionMobile />
+    </>
+  );
+};
+
+const HeroSectionMobile = () => {
+  return (
+    <div className="block md:hidden h-[110dvh] bg-[#F5F5F7]">
+      <div className="flex flex-col items-center justify-center">
+        <div className="relative mx-auto overflow-hidden mt-[5vh]">
+          <img
+            src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg"
+            className="object-cover  h-[310px] "
+          />
+        </div>
+
+        <img
+          src="https://www.apple.com/v/apple-tv-4k/ai/images/overview/hero/hero_tv_remote__da02803g5doy_large.png"
+          className="z-50 object-contain h-16 mt-10 "
+        />
+      </div>
+
+      <div className="flex items-center justify-center w-full my-5 ">
+        <h2 class="text-4xl font-semibold text-center max-w-[300px]">
+          The ultimate
+          <br />
+          TV experience is&nbsp;calling.
+        </h2>
+      </div>
+
+      <div className="font-semibold text-gray-400 mx-auto max-w-[300px]">
+        <p className="">
+          Apple&nbsp;TV&nbsp;4K unites your favorite Apple services with all
+          your streaming apps in our best-ever picture and sound quality —
+          thanks to the blazing‑fast A15&nbsp;Bionic chip. Enjoy a FaceTime
+          experience on TV that brings your friends and family into your living
+          room — and onto the biggest screen in your home. And with seamless
+          interaction with all your devices and smart home accessories, it’s
+          everything you love about Apple — at its cinematic best.
+          <br />
+          <br />
+          <span className="">Starting at $129</span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const HeroSectionDesktop = () => {
   const targetRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -26,7 +78,10 @@ const HeroSection = () => {
   const transform = useMotionTemplate`matrix(${dimension},0,0,${dimension},0,${scale})`;
 
   return (
-    <section className="h-[175dvh] relative bg-[#F5F5F7] " ref={targetRef}>
+    <section
+      className="h-[175dvh] relative bg-[#F5F5F7] md:block hidden"
+      ref={targetRef}
+    >
       <div className="sticky top-12 h-[110dvh] w-full  flex items-center justify-center">
         <motion.div
           className="flex items-center justify-center pt-12"
@@ -91,5 +146,3 @@ const HeroSection = () => {
     </section>
   );
 };
-
-export default HeroSection;
