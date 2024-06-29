@@ -79,12 +79,12 @@ const HeroSectionDesktop = () => {
 
   return (
     <section
-      className="h-[175dvh] relative bg-[#F5F5F7] md:block hidden"
+      className="h-[175dvh]  bg-[#F5F5F7] md:block hidden relative"
       ref={targetRef}
     >
-      <div className="sticky top-12 h-[110dvh] w-full  flex items-center justify-center">
+      <div className="sticky top-12 h-[110dvh] w-full  flex items-center justify-center overflow-hidden">
         <motion.div
-          className="flex items-center justify-center pt-12"
+          className="flex items-center justify-center w-full h-full pt-12 "
           animate={{ transition: { type: "tween" } }}
           style={{ transform }}
         >

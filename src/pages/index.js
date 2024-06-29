@@ -12,8 +12,7 @@ export default function Home() {
       <StickyNavbar />
       <HeroSection />
       <CarouselAnimation />
-      {/* <ScrollContainer /> */}
-      <div className="w-full h-[100vh] bg-red-500"></div>
+      <ScrollContainer />
     </main>
   );
 }
