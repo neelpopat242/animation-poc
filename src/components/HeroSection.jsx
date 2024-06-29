@@ -82,37 +82,35 @@ const HeroSectionDesktop = () => {
       className="h-[175dvh]  bg-[#F5F5F7] md:block hidden relative"
       ref={targetRef}
     >
-      <div className="sticky top-12 h-[110dvh] w-full  flex items-center justify-center overflow-hidden">
+      <div className="sticky top-[70px] h-[110dvh] w-full  flex items-center justify-center overflow-hidden">
         <motion.div
-          className="flex items-center justify-center w-full h-full pt-12 "
+          className="flex items-center justify-center w-full h-full "
           animate={{ transition: { type: "tween" } }}
           style={{ transform }}
         >
           <div className="space-y-0">
-            <div>
-              <div className="relative mx-auto h-[610px] w-3/5  overflow-hidden border-4 border-b-gray-900 ">
-                <video
-                  className="object-cover w-full h-full transition duration-500 "
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                >
-                  <source src="/hero.mp4" />
-                </video>
-                <motion.img
-                  src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg"
-                  className="absolute inset-0"
-                  style={{ opacity: videoPosterOpacity }}
-                />
-              </div>
-
+            <div className="relative mx-auto h-[540px] w-[960px]  overflow-hidden border-4 border-b-gray-900 ">
+              <video
+                className="object-cover w-full h-full transition duration-500 "
+                muted
+                loop
+                autoPlay
+                playsInline
+              >
+                <source src="/hero.mp4" />
+              </video>
               <motion.img
-                src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_tv_shadow_color__h0jua2c6nwi2_large.png"
-                className="mx-auto "
+                src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_staticframe__fc291ipcri2y_small_2x.jpg"
+                className="absolute inset-0"
                 style={{ opacity: videoPosterOpacity }}
               />
             </div>
+
+            <motion.img
+              src="https://www.apple.com/v/apple-tv-4k/aj/images/overview/hero/hero_tv_shadow_color__h0jua2c6nwi2_large.png"
+              className="mx-auto "
+              style={{ opacity: videoPosterOpacity }}
+            />
 
             <img
               src="https://www.apple.com/v/apple-tv-4k/ai/images/overview/hero/hero_tv_remote__da02803g5doy_large.png"
