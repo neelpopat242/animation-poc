@@ -9,7 +9,7 @@ export default function AppleFitness() {
           className="w-24 mb-4"
         />
 
-        <span className="text-lg font-bold tracking-wide text-[#afe9c4]">
+        <span className="text-sm md:text-lg font-bold tracking-wide text-[#afe9c4]">
           <span className="text-white ">Apple Fitness+.</span> Watch, rent, or
           buy your favorite shows and movies all in one expertly curated app.
           Enjoy critically acclaimed Apple Originals series and films from Apple

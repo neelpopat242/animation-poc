@@ -5,7 +5,7 @@ export default function ScreenSavers() {
   return (
     <div className="flex flex-col items-center justify-center h-full ">
       <div className="flex flex-col w-80">
-        <span className="text-lg font-bold tracking-wide text-gray-400">
+        <span className="text-sm font-bold tracking-wide text-gray-400 md:text-lg">
           <span className="text-black ">Screen savers. </span> Mesmerizing
           visuals take you to the most stunning locations on the earth and
           beyond. They can also showcase photos of your cherished moments and

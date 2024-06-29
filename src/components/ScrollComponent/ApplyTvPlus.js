@@ -10,7 +10,7 @@ export default function AppleTvPlus() {
           className="w-24 mb-4"
         />
 
-        <span className="text-lg font-bold tracking-wide text-gray-400">
+        <span className="text-sm font-bold tracking-wide text-gray-400 md:text-lg">
           <span className="text-black ">Apple TV+</span> Watch series, feature
           films, kids’ entertainment, and more from the most creative minds in
           TV and movies — with new Apple Originals added every month.4

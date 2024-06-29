@@ -10,7 +10,7 @@ export default function AppleArcade() {
           className="w-24 mb-4"
         />
 
-        <span className="text-lg font-bold tracking-wide text-[#afe9c4]">
+        <span className="text-sm md:text-lg font-bold tracking-wide text-[#afe9c4]">
           <span className="text-white ">Apple Arcade.</span> Playing Apple
           Arcade games is even more immersive on your big screen.4 Multiuser
           support helps players keep track of their individual game levels,

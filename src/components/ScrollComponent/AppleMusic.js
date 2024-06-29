@@ -10,7 +10,7 @@ export default function AppleMusic() {
           className="w-24 mb-4"
         />
 
-        <span className="text-lg font-bold tracking-wide text-[#afe9c4]">
+        <span className="text-sm md:text-lg font-bold tracking-wide text-[#afe9c4]">
           <span className="text-white ">Apple Music.</span> Listen to over 100
           million songs, 30,000 playlists, and live radio on the big screen. You
           can even be your own video star with Apple Music Sing5 — sing top

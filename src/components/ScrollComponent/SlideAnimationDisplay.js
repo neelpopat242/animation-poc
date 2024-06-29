@@ -9,6 +9,7 @@ import {
   useMotionValue,
   useVelocity,
   useAnimationFrame,
+  useMotionTemplate,
 } from "framer-motion";
 
 export function SlideAnimationDisplay({ baseVelocity = 100, mediaObject }) {
@@ -41,9 +42,13 @@ export function SlideAnimationDisplay({ baseVelocity = 100, mediaObject }) {
     baseX.set(baseX.get() + moveBy);
   });
 
+  const translateX = useMotionTemplate`translateX(${x})`;
   return (
     <div className="flex w-full gap-2 my-2 overflow-hidden ">
-      <motion.div className="flex w-[150vw] gap-8 " style={{ x }}>
+      <motion.div
+        className="flex w-[150vw] gap-8 "
+        style={{ transform: translateX }}
+      >
         {mediaObject.map((media, index) => {
           return (
             <div key={index} className="w-full h-48 aspect-video">

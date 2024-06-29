@@ -10,7 +10,7 @@ export default function ApplePhotos() {
           className="w-24 mb-4"
         />
 
-        <span className="text-lg font-bold tracking-wide text-gray-400">
+        <span className="text-sm font-bold tracking-wide text-gray-400 md:text-lg">
           <span className="text-black ">Photos.</span> iCloud Shared Photo
           Library makes it easier than ever for the whole family to enjoy each
           other’s photos, and you can see them all right on your TV. And you can

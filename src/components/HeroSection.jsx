@@ -33,7 +33,7 @@ const HeroSectionMobile = () => {
       </div>
 
       <div className="flex items-center justify-center w-full my-5 ">
-        <h2 class="text-4xl font-semibold text-center max-w-[300px]">
+        <h2 className="text-4xl font-semibold text-center max-w-[300px]">
           The ultimate
           <br />
           TV experience is&nbsp;calling.

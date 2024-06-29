@@ -9,7 +9,7 @@ export default function InSight() {
           <span className="text-[#B64000]">Coming this fall</span>
         </div>
 
-        <span className="text-lg font-bold tracking-wide text-gray-400">
+        <span className="text-sm font-bold tracking-wide text-gray-400 md:text-lg">
           <span className="text-black ">InSight</span> You can get information
           about Apple TV+ Original series and films as you watch them. Just
           bring up the media player controls to learn more about the actors on
