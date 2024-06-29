@@ -41,7 +41,7 @@ const HeroSectionMobile = () => {
       </div>
 
       <div className="font-semibold text-gray-400 mx-auto max-w-[300px]">
-        <p className="">
+        <p className="text-[12px] md:text-base">
           Apple&nbsp;TV&nbsp;4K unites your favorite Apple services with all
           your streaming apps in our best-ever picture and sound quality —
           thanks to the blazing‑fast A15&nbsp;Bionic chip. Enjoy a FaceTime
